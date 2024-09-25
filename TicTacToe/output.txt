@@ -1,0 +1,10 @@
+Board:
+- - - 
+- - - 
+- - - 
+Player Xenter your move(row and column)
+Board:
+- X - 
+- - - 
+- - - 
+Player 0enter your move(row and column)
