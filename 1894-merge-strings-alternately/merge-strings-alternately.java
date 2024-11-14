@@ -45,7 +45,7 @@ class Solution {
 
 
 
-        */
+        
         StringBuilder result=new StringBuilder();
         int val=Math.max(n1, n2);
         for(int i=0; i<val; i++)
@@ -60,5 +60,33 @@ class Solution {
             }
         }
         return result.toString();
+
+
+
+
+        */
+
+
+
+        ArrayList<Character> list=new ArrayList<>();
+        int val=Math.max(n1, n2);
+        for(int i=0; i<val; i++)
+        {
+            if(i<n1)
+            {
+                list.add(word1.charAt(i));
+            }
+            if(i<n2)
+            {
+                list.add(word2.charAt(i));
+            }
+        }
+        StringBuilder result=new StringBuilder();
+        for(int i=0; i<list.size(); i++)
+        {
+            result.append(list.get(i));
+        }
+        return result.toString();
+
     }
 }
