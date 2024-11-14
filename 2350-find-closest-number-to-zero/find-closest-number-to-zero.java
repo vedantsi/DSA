@@ -28,14 +28,18 @@ class Solution {
                 result=i;
             }
         }
-        for(int i: nums)
+        if(result<0)
         {
-            if(Math.abs(result)==i)
+            for(int i: nums)
             {
-                result=i;
+                if(Math.abs(result)==i)
+                {
+                    result=i;
+                }
             }
         }
         return result;
+        
     }
 
 }
