@@ -25,7 +25,7 @@ class Solution {
 
 
         //Two pointer approach
-*/
+
 
 
         int value=0;
@@ -48,12 +48,37 @@ class Solution {
         }
         return true;
 
-/*
+
         1  3   3   1 
 
         0   1   2
         1   2   1
 
         */
+        if(x<0)
+        {
+            return false;
+        }
+        String s=String.valueOf(x);
+        int n=s.length();
+        int left=0; 
+        int right= n-1;
+        boolean result=isCheck(s, left, right);
+        return result;
     }
+
+    public static boolean isCheck(String s, int left, int right)
+    {
+        if(left> right)
+        {
+            return true;
+        }
+        if(s.charAt(left)!=s.charAt(right))
+        {
+            return false;
+        }
+        return isCheck(s, left+1, right-1);
+
+    }
+
 }
