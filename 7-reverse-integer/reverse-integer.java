@@ -62,7 +62,7 @@ class Solution {
         int sign=(x>0)? 1: -1;
         int value=0;
         x=Math.abs(x);
-        while(x!=0)
+        while(x>0)
         {
             int lastDigit=x%10;
             if(value > Integer.MAX_VALUE/10 || (value==Integer.MAX_VALUE/10 && lastDigit>7 ))
