@@ -20,7 +20,7 @@ class Solution {
             return 0;
         }    
         return result;
-        */
+        -------------------------------------------------------------------------------------------
 
 
 
@@ -45,5 +45,39 @@ class Solution {
         {
             return 0;
         }
+
+
+        */
+
+
+
+
+
+
+
+
+
+
+
+        int sign=(x>0)? 1: -1;
+        int value=0;
+        x=Math.abs(x);
+        while(x!=0)
+        {
+            int lastDigit=x%10;
+            if(value > Integer.MAX_VALUE/10 || (value==Integer.MAX_VALUE/10 && lastDigit>7 ))
+            {
+                return 0;
+            }
+            else if(value < Integer.MIN_VALUE/10 || (value==Integer.MIN_VALUE/10 && lastDigit<-8 ))
+            {
+                return 0;
+            }
+            value=value*10 +lastDigit;
+            x=x/10;
+
+
+        }
+        return (sign ==1)? value : sign* value;
     }
 }
