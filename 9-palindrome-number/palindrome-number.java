@@ -20,12 +20,12 @@ class Solution {
         }
         return false;
 
-        */
+        
 
 
 
         //Two pointer approach
-
+*/
 
 
         int value=0;
@@ -37,7 +37,7 @@ class Solution {
         int n=str.length();
         int left=0; 
         int right=n-1;
-        while(left <=right)
+        while(left <right)
         {
             if(str.charAt(left)!= str.charAt(right))
             {
@@ -47,5 +47,13 @@ class Solution {
             right--;
         }
         return true;
+
+/*
+        1  3   3   1 
+
+        0   1   2
+        1   2   1
+
+        */
     }
 }
