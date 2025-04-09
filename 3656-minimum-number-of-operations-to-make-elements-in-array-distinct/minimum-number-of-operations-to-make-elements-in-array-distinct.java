@@ -29,7 +29,7 @@ class Solution {
     public int minimumOperations(int[] nums) {
         int result=0;
         HashSet<Integer> set=new HashSet<>();
-        for(int i=nums.length-1; i>=0; i--)
+        for(int i=nums.length-1; i>=0; i--)//O(N)
         {
             if(set.contains(nums[i]))
             {
