@@ -75,9 +75,7 @@ class Solution {
 
 
         //------------------------------------------------------------------------------------------------------------
-
-
-
+        /*
         if(s.length()!=t.length())
         {
             return false;
@@ -96,6 +94,60 @@ class Solution {
             }
         }
         return true;
+
+        //Time Complexity: O(N)
+        //Space Complexity: O(26)----.O(1)
+        */
+
+
+
+
+
+        //----------------------------------------------------------------------------------------------------------
+
+
+
+
+        //FOR UNICODE:
+        if(s.length()!=t.length())
+        {
+            return false;
+        }
+        HashMap<Integer, Integer> countFreq=new HashMap<>();
+        for(int i=0; i<s.length();)
+        {
+            int codePoint =s.codePointAt(i);
+            countFreq.put(codePoint, countFreq.getOrDefault(codePoint, 0)+1);
+            i+=Character.charCount(codePoint);///Skip surrogate pairs
+
+        }
+
+        for(int i=0; i<t.length();)
+        {
+            int codePoint=t.codePointAt(i);
+            if(countFreq.containsKey(codePoint))
+            {
+                int value=countFreq.get(codePoint)-1;
+                if(value <0)
+                {
+                    return false;
+                }
+                else
+                {
+                    countFreq.put(codePoint, value);
+                }
+            }
+            else
+            {
+                return false;
+            }
+            i+=Character.charCount(codePoint);
+            
+        }
+        return true;
+
+        //Time complexity: O(N)
+        //Space complexity: O(K)
 
     }
 }
