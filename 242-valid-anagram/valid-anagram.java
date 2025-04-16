@@ -1,5 +1,6 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
+        /*
         if(s.length() !=t.length() )
         {
             return false;
@@ -17,6 +18,47 @@ class Solution {
         for(char ch:countofS.keySet())
         {
             if(!countofT.containsKey(ch) || !countofT.get(ch).equals(countofS.get(ch)))
+            {
+                return false;
+            }
+        }
+        return true;
+        Time Complexity: O(N)+O(N)+O(1)---0(26)
+        Space Complexity: O(N)+O(N)---->since we know there are 26 unique chracters
+        O(26)--->O(1)
+        */
+
+
+
+
+
+        //--------------------------------------------------------------------------------
+        if(s.length()!=t.length())
+        {
+            return false;
+        }
+        HashMap<Character, Integer> CountFreq=new HashMap<>();
+        for(char ch:s.toCharArray())
+        {
+            CountFreq.put(ch, CountFreq.getOrDefault(ch, 0)+1);
+        }
+        for(char c:t.toCharArray())
+        {
+            if(CountFreq.containsKey(c))
+            {
+                int value=CountFreq.get(c)-1;
+                if(value==0)
+                {
+                    CountFreq.remove(c);
+
+                }
+                else
+                {
+                    CountFreq.put(c, value);
+                }
+                
+            }
+            else
             {
                 return false;
             }
