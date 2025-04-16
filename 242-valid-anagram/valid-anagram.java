@@ -47,21 +47,17 @@ class Solution {
             if(CountFreq.containsKey(c))
             {
                 int value=CountFreq.get(c)-1;
-                if(value==0)
+                if(value<0)
                 {
-                    CountFreq.remove(c);
-
+                    return false;
                 }
-                else
-                {
-                    CountFreq.put(c, value);
-                }
-                
+                CountFreq.put(c, value);
             }
             else
             {
                 return false;
             }
+
         }
         return true;
     }
