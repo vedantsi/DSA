@@ -33,6 +33,7 @@ class Solution {
 
 
         //--------------------------------------------------------------------------------
+        /*
         if(s.length()!=t.length())
         {
             return false;
@@ -60,5 +61,41 @@ class Solution {
 
         }
         return true;
+
+        //Time Complexity: O(N)+O(N)--->O(N)
+        //Space Complexity: O(K), where K is unqiue element in string S
+
+
+
+
+        */
+
+
+
+
+
+        //------------------------------------------------------------------------------------------------------------
+
+
+
+        if(s.length()!=t.length())
+        {
+            return false;
+        }
+        int charFreq[]=new int[26];
+        for(char ch:s.toCharArray())
+        {
+            charFreq[ch-'a']++;
+        }
+        for(char c:t.toCharArray())
+        {
+            charFreq[c-'a']--;
+            if(charFreq[c-'a']<0)
+            {
+                return false;
+            }
+        }
+        return true;
+
     }
 }
