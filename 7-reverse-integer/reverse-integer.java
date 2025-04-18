@@ -47,9 +47,6 @@ class Solution {
         }
 
 
-        */
-
-
 
 
 
@@ -79,5 +76,46 @@ class Solution {
 
         }
         return (sign ==1)? value : sign* value;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        */
+
+
+
+
+
+        int sign=(x<0)? -1: 1;
+        x=Math.abs(x);
+        long reverse=0;
+        while(x>0)
+        {
+            int digit=x%10;
+            reverse=reverse*10+digit;
+            x=x/10;
+        }
+        if(reverse <Integer.MAX_VALUE)
+        {
+            return sign*(int)reverse;
+        }
+        return 0;
     }
 }
