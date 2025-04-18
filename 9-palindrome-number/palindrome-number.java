@@ -90,7 +90,7 @@ class Solution {
 
 
 
-    */
+
 
 
 
@@ -112,6 +112,31 @@ class Solution {
             return true;
         }
         return false;
+        time complexity:O(log base 10 X)--->O( number of digits in X)
+
+
+        ---------------------------------------------------------------------------------------------------------
+
+        Two Pointer Approavch:
+        */
+        if(x<0)
+        {
+            return false;
+        }
+        String str=Integer.toString(x);
+
+        int left =0;
+        int right=str.length()-1;
+        while(left < right)
+        {
+            if(str.charAt(left)!=str.charAt(right))
+            {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 
 
