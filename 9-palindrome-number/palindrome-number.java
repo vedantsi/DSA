@@ -54,12 +54,17 @@ class Solution {
         0   1   2
         1   2   1
 
-        */
+        
         if(x<0)
         {
             return false;
         }
         String s=String.valueOf(x);
+        char str[]=s.toCharArray();
+        for(char c: str)
+        {
+            System.out.println(c);
+        }
         int n=s.length();
         int left=0; 
         int right= n-1;
@@ -69,7 +74,7 @@ class Solution {
 
     public static boolean isCheck(String s, int left, int right)
     {
-        if(left> right)
+        if(left>= right)
         {
             return true;
         }
@@ -80,5 +85,34 @@ class Solution {
         return isCheck(s, left+1, right-1);
 
     }
+
+
+
+
+
+    */
+
+
+
+
+        if(x<0)
+        {
+            return false;
+        }
+        int num=x;
+        int reverse=0;
+        while(x>0)
+        {
+            int digit=x%10;
+            reverse=reverse*10+digit;
+            x=x/10;
+        }
+        if(num==reverse)
+        {
+            return true;
+        }
+        return false;
+    }
+
 
 }
