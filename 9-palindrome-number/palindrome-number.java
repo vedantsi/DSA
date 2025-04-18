@@ -118,7 +118,6 @@ class Solution {
         ---------------------------------------------------------------------------------------------------------
 
         Two Pointer Approavch:
-        */
         if(x<0)
         {
             return false;
@@ -137,7 +136,38 @@ class Solution {
             right--;
         }
         return true;
+
+
+        Time complexity:O(N/2)---->O(N)
+
+        */
+
+
+
+        if(x<0)
+        {
+            return false;
+        }
+        String str=String.valueOf(x);
+        int left=0;
+        int right=str.length()-1;
+        return checkPalin(str, left, right);
+
     }
+    public static boolean checkPalin(String str, int left, int right)
+    {
+        //Base Condition
+        if(left >=right)
+        {
+            return true;
+        }
+        if(str.charAt(left)!=str.charAt(right))
+        {
+            return false;
+        }
+        return checkPalin(str, left+1, right-1);
+    }
+
 
 
 }
