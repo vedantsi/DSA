@@ -4,7 +4,6 @@ class Solution {
         for(int i=1; i<=n;i++)
         {
             int num=i;
-            ArrayList<Integer> list=new ArrayList<>();
             int sum=0;
             while(num >0)
             {
