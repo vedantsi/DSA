@@ -3,36 +3,20 @@ class Solution {
         HashMap<Integer, ArrayList<Integer>> map=new HashMap<>();
         for(int i=1; i<=n;i++)
         {
+            int num=i;
             ArrayList<Integer> list=new ArrayList<>();
-            String s=String.valueOf(i);
-            if(s.length()==1)
+            int sum=0;
+            while(num >0)
             {
-                list.add(i);
-                map.put(i, list);
+                int digit=num%10;
+                sum=sum+digit;
+                num=num/10;
             }
-            else
+            if(!map.containsKey(sum))
             {
-                int sum=0;
-                for(char ch:s.toCharArray())
-                {
-                    sum=sum+(ch -'0');
-                }
-                if(map.containsKey(sum))
-                {
-                    ArrayList<Integer> update=new ArrayList<>();
-                    update.addAll(map.get(sum));
-                    update.add(i);
-                    map.put(sum, update);
-                }
-                else
-                {
-                    ArrayList<Integer> ins=new ArrayList<>();
-                    ins.add(i);
-                    map.put(sum, ins);
-                }
-
-
+                 map.put(sum, new ArrayList<>());
             }
+            map.get(sum).add(i);
         }
         int result=0;
         for(int value:map.keySet())
